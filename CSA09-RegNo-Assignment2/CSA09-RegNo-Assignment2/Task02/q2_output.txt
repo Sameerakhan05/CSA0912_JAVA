@@ -1,0 +1,81 @@
+Java 21.0.12.1
+add at end (n adds)        n=10000    ArrayList           0.183 ms
+add at end (n adds)        n=10000    LinkedList          1.062 ms
+add at end (n adds)        n=10000    ArrayDeque          0.371 ms
+insert at front            n=10000    ArrayList           1.567 ms
+insert at front            n=10000    LinkedList          0.995 ms
+insert at front            n=10000    ArrayDeque          0.054 ms
+insert in middle           n=10000    ArrayList           0.384 ms
+insert in middle           n=10000    LinkedList         30.081 ms
+remove from front          n=10000    ArrayList           1.312 ms
+remove from front          n=10000    LinkedList          0.038 ms
+remove from front          n=10000    ArrayDeque          0.036 ms
+remove from middle         n=10000    ArrayList           1.089 ms
+remove from middle         n=10000    LinkedList         12.718 ms
+get k-th (2000 gets)       n=10000    ArrayList           0.218 ms
+get k-th (2000 gets)       n=10000    LinkedList          7.379 ms
+iterate all                n=10000    ArrayList           0.322 ms
+iterate all                n=10000    LinkedList          0.278 ms
+iterate all                n=10000    ArrayDeque          0.356 ms
+insert at front            n=10000    plain array         9.174 ms
+insert in middle           n=10000    plain array         5.857 ms
+get k-th (2000 gets)       n=10000    plain array         0.034 ms
+
+add at end (n adds)        n=50000    ArrayList           2.719 ms
+add at end (n adds)        n=50000    LinkedList          0.887 ms
+add at end (n adds)        n=50000    ArrayDeque          1.235 ms
+insert at front            n=50000    ArrayList           7.864 ms
+insert at front            n=50000    LinkedList          0.045 ms
+insert at front            n=50000    ArrayDeque          0.858 ms
+insert in middle           n=50000    ArrayList           3.925 ms
+insert in middle           n=50000    LinkedList         69.960 ms
+remove from front          n=50000    ArrayList           7.065 ms
+remove from front          n=50000    LinkedList          0.813 ms
+remove from front          n=50000    ArrayDeque          0.028 ms
+remove from middle         n=50000    ArrayList           3.493 ms
+remove from middle         n=50000    LinkedList         66.346 ms
+get k-th (2000 gets)       n=50000    ArrayList           0.101 ms
+get k-th (2000 gets)       n=50000    LinkedList         34.422 ms
+iterate all                n=50000    ArrayList           0.958 ms
+iterate all                n=50000    LinkedList          0.381 ms
+iterate all                n=50000    ArrayDeque          0.252 ms
+insert at front            n=50000    plain array        40.664 ms
+insert in middle           n=50000    plain array        21.067 ms
+get k-th (2000 gets)       n=50000    plain array         0.052 ms
+
+add at end (n adds)        n=100000   ArrayList           2.145 ms
+add at end (n adds)        n=100000   LinkedList          0.598 ms
+add at end (n adds)        n=100000   ArrayDeque          0.210 ms
+insert at front            n=100000   ArrayList          15.435 ms
+insert at front            n=100000   LinkedList          0.037 ms
+insert at front            n=100000   ArrayDeque          0.115 ms
+insert in middle           n=100000   ArrayList           7.707 ms
+insert in middle           n=100000   LinkedList        146.453 ms
+remove from front          n=100000   ArrayList          15.235 ms
+remove from front          n=100000   LinkedList          0.041 ms
+remove from front          n=100000   ArrayDeque          0.023 ms
+remove from middle         n=100000   ArrayList           7.655 ms
+remove from middle         n=100000   LinkedList        132.960 ms
+get k-th (2000 gets)       n=100000   ArrayList           0.091 ms
+get k-th (2000 gets)       n=100000   LinkedList         77.983 ms
+iterate all                n=100000   ArrayList           0.114 ms
+iterate all                n=100000   LinkedList          0.604 ms
+iterate all                n=100000   ArrayDeque          0.173 ms
+insert at front            n=100000   plain array        72.867 ms
+insert in middle           n=100000   plain array        40.631 ms
+get k-th (2000 gets)       n=100000   plain array         0.035 ms
+
+=== UP NEXT QUEUE: 100,000 mixed operations (addFirst / addLast / removeFirst) on a queue pre-filled with n songs ===
+UpNext mixed ops           n=1000     ArrayList          50.113 ms
+UpNext mixed ops           n=1000     LinkedList          1.089 ms
+UpNext mixed ops           n=1000     ArrayDeque          0.288 ms
+
+UpNext mixed ops           n=10000    ArrayList          89.903 ms
+UpNext mixed ops           n=10000    LinkedList          0.408 ms
+UpNext mixed ops           n=10000    ArrayDeque          0.184 ms
+
+UpNext mixed ops           n=50000    ArrayList         291.647 ms
+UpNext mixed ops           n=50000    LinkedList          0.459 ms
+UpNext mixed ops           n=50000    ArrayDeque          0.376 ms
+
+Raw data written to q2_results.csv

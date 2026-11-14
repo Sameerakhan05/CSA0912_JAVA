@@ -1,0 +1,103 @@
+workload,fields,tickets,approach,run,time_ms,allocated_MB
+W1 short ticket,10,100000,String +,1,103.0989,99.1821
+W1 short ticket,10,100000,String +,2,32.7027,99.1821
+W1 short ticket,10,100000,String +,3,15.2316,99.1821
+W1 short ticket,10,100000,String +,4,12.7304,99.1821
+W1 short ticket,10,100000,String +,5,12.5650,99.1821
+W1 short ticket,10,100000,StringBuilder,1,23.7869,48.8281
+W1 short ticket,10,100000,StringBuilder,2,19.2285,48.8281
+W1 short ticket,10,100000,StringBuilder,3,22.0923,48.8281
+W1 short ticket,10,100000,StringBuilder,4,20.8634,48.8281
+W1 short ticket,10,100000,StringBuilder,5,11.2385,48.8281
+W1 short ticket,10,100000,StringBuffer,1,12.1096,49.5911
+W1 short ticket,10,100000,StringBuffer,2,9.2594,49.5911
+W1 short ticket,10,100000,StringBuffer,3,9.0802,49.5911
+W1 short ticket,10,100000,StringBuffer,4,9.0718,49.5911
+W1 short ticket,10,100000,StringBuffer,5,9.1778,49.5911
+W1 short ticket,10,100000,String.join,1,28.1747,34.3323
+W1 short ticket,10,100000,String.join,2,15.9830,34.3323
+W1 short ticket,10,100000,String.join,3,6.8096,34.3323
+W1 short ticket,10,100000,String.join,4,6.5171,34.3323
+W1 short ticket,10,100000,String.join,5,6.2788,34.3323
+W1 short ticket,10,100000,StringJoiner,1,26.8595,26.8820
+W1 short ticket,10,100000,StringJoiner,2,32.0319,26.7029
+W1 short ticket,10,100000,StringJoiner,3,21.2850,26.7029
+W1 short ticket,10,100000,StringJoiner,4,13.5630,26.7029
+W1 short ticket,10,100000,StringJoiner,5,12.5593,26.7029
+W1 short ticket,10,100000,String.format,1,132.0369,291.6869
+W1 short ticket,10,100000,String.format,2,81.8252,312.7194
+W1 short ticket,10,100000,String.format,3,81.5768,308.2275
+W1 short ticket,10,100000,String.format,4,48.1943,308.2275
+W1 short ticket,10,100000,String.format,5,49.6987,308.2275
+W2 many big tickets,50,10000,String +,1,20.9249,162.5061
+W2 many big tickets,50,10000,String +,2,16.1624,162.5061
+W2 many big tickets,50,10000,String +,3,17.6395,162.5061
+W2 many big tickets,50,10000,String +,4,16.6022,162.5061
+W2 many big tickets,50,10000,String +,5,15.9075,162.5061
+W2 many big tickets,50,10000,StringBuilder,1,8.6449,29.1443
+W2 many big tickets,50,10000,StringBuilder,2,7.6003,29.1443
+W2 many big tickets,50,10000,StringBuilder,3,6.9705,29.1443
+W2 many big tickets,50,10000,StringBuilder,4,5.5181,29.1443
+W2 many big tickets,50,10000,StringBuilder,5,5.8234,29.1443
+W2 many big tickets,50,10000,StringBuffer,1,7.1614,29.2206
+W2 many big tickets,50,10000,StringBuffer,2,6.5326,29.2206
+W2 many big tickets,50,10000,StringBuffer,3,5.0830,29.2206
+W2 many big tickets,50,10000,StringBuffer,4,4.9590,29.2206
+W2 many big tickets,50,10000,StringBuffer,5,5.5504,29.2206
+W2 many big tickets,50,10000,String.join,1,3.7162,14.1144
+W2 many big tickets,50,10000,String.join,2,4.0228,14.1144
+W2 many big tickets,50,10000,String.join,3,3.4022,14.1144
+W2 many big tickets,50,10000,String.join,4,3.2773,14.1144
+W2 many big tickets,50,10000,String.join,5,3.2920,14.1144
+W2 many big tickets,50,10000,StringJoiner,1,4.3940,11.2152
+W2 many big tickets,50,10000,StringJoiner,2,3.9844,11.2152
+W2 many big tickets,50,10000,StringJoiner,3,4.3386,11.2152
+W2 many big tickets,50,10000,StringJoiner,4,5.8716,11.2152
+W2 many big tickets,50,10000,StringJoiner,5,4.7070,11.2152
+W2 many big tickets,50,10000,String.format,1,85.5868,163.3379
+W2 many big tickets,50,10000,String.format,2,37.1020,158.8440
+W2 many big tickets,50,10000,String.format,3,28.1913,158.8440
+W2 many big tickets,50,10000,String.format,4,27.0494,158.8440
+W2 many big tickets,50,10000,String.format,5,25.0722,158.8440
+W3 one huge ticket,20000,1,String +,1,227.2389,2458.5714
+W3 one huge ticket,20000,1,String +,2,224.4009,2458.5714
+W3 one huge ticket,20000,1,String +,3,219.4165,2458.5714
+W3 one huge ticket,20000,1,String +,4,219.4062,2458.5714
+W3 one huge ticket,20000,1,String +,5,227.6110,2458.5714
+W3 one huge ticket,20000,1,StringBuilder,1,0.1857,0.8086
+W3 one huge ticket,20000,1,StringBuilder,2,0.2344,0.8086
+W3 one huge ticket,20000,1,StringBuilder,3,0.2026,0.8086
+W3 one huge ticket,20000,1,StringBuilder,4,0.2015,0.8086
+W3 one huge ticket,20000,1,StringBuilder,5,0.2099,0.8086
+W3 one huge ticket,20000,1,StringBuffer,1,0.2101,0.8086
+W3 one huge ticket,20000,1,StringBuffer,2,0.2073,0.8086
+W3 one huge ticket,20000,1,StringBuffer,3,0.2171,0.8086
+W3 one huge ticket,20000,1,StringBuffer,4,0.2103,0.8086
+W3 one huge ticket,20000,1,StringBuffer,5,0.2747,0.8086
+W3 one huge ticket,20000,1,String.join,1,0.2053,0.5681
+W3 one huge ticket,20000,1,String.join,2,0.1832,0.5681
+W3 one huge ticket,20000,1,String.join,3,0.1808,0.5681
+W3 one huge ticket,20000,1,String.join,4,0.2322,0.5681
+W3 one huge ticket,20000,1,String.join,5,0.1737,0.5681
+W3 one huge ticket,20000,1,StringJoiner,1,0.2425,0.4961
+W3 one huge ticket,20000,1,StringJoiner,2,0.2187,0.4961
+W3 one huge ticket,20000,1,StringJoiner,3,0.2169,0.4961
+W3 one huge ticket,20000,1,StringJoiner,4,0.2705,0.4961
+W3 one huge ticket,20000,1,StringJoiner,5,0.2140,0.4961
+W3 one huge ticket,20000,1,String.format,1,1.2179,5.9966
+W3 one huge ticket,20000,1,String.format,2,1.2328,5.9966
+W3 one huge ticket,20000,1,String.format,3,1.4320,5.9966
+W3 one huge ticket,20000,1,String.format,4,1.3321,5.9966
+W3 one huge ticket,20000,1,String.format,5,1.2520,5.9966
+SCALING,1000,1,String +,0,1.1799,0
+SCALING,1000,1,StringBuilder,0,1.2990,0
+SCALING,2000,1,String +,0,1.7081,0
+SCALING,2000,1,StringBuilder,0,0.0178,0
+SCALING,4000,1,String +,0,8.1710,0
+SCALING,4000,1,StringBuilder,0,0.1194,0
+SCALING,8000,1,String +,0,35.7243,0
+SCALING,8000,1,StringBuilder,0,0.1803,0
+SCALING,16000,1,String +,0,144.9493,0
+SCALING,16000,1,StringBuilder,0,0.4040,0
+SCALING,32000,1,String +,0,585.9726,0
+SCALING,32000,1,StringBuilder,0,0.4054,0

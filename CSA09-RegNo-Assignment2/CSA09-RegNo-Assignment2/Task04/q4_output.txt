@@ -1,0 +1,69 @@
+MapBenchmark.java:66: warning: [unchecked] unchecked conversion
+            Supplier<Map<String, Medicine>>[] makers = new Supplier[]{HashMap::new, TreeMap::new, LinkedHashMap::new, Hashtable::new};
+                                                       ^
+  required: Supplier<Map<String,Medicine>>[]
+  found:    Supplier[]
+MapBenchmark.java:80: warning: [unchecked] unchecked conversion
+                final List<String>[] codeOut = new List[1];
+                                               ^
+  required: List<String>[]
+  found:    List[]
+MapBenchmark.java:90: warning: [unchecked] unchecked conversion
+                final List<String>[] insOut = new List[1];
+                                              ^
+  required: List<String>[]
+  found:    List[]
+MapBenchmark.java:154: warning: [unchecked] unchecked conversion
+        Supplier<Map<String, Medicine>>[] makers = new Supplier[]{HashMap::new, TreeMap::new, LinkedHashMap::new, Hashtable::new};
+                                                   ^
+  required: Supplier<Map<String,Medicine>>[]
+  found:    Supplier[]
+4 warnings
+Java 21.0.12.1
+
+================ n = 10,000 medicines ================
+Structure       build(ms)   100k lookups      ns / lookup  code report(ms)   code ok?   ins. ok?
+HashMap              5.90           4.01             40.1             7.83       true       true   raw iteration: code-order=false insertion-order=false
+                  insertion-order report: 1.93 ms
+TreeMap              8.44          22.71            227.1             1.45       true       true   raw iteration: code-order=true insertion-order=false
+                  insertion-order report: 4.07 ms
+LinkedHashMap        1.87           3.44             34.4             6.01       true       true   raw iteration: code-order=false insertion-order=true
+                  insertion-order report: 0.40 ms
+Hashtable            2.56           4.57             45.7             3.90       true       true   raw iteration: code-order=false insertion-order=false
+                  insertion-order report: 1.36 ms
+sorted array        10.25          19.68            196.8             0.30   (sorted array: build = sort)
+Insert 1,000 new medicines into structure holding 10,000:  HashMap 0.066 ms | TreeMap 0.162 ms | sorted array 0.284 ms
+
+================ n = 100,000 medicines ================
+Structure       build(ms)   100k lookups      ns / lookup  code report(ms)   code ok?   ins. ok?
+HashMap             33.58          10.90            109.0            54.54       true       true   raw iteration: code-order=false insertion-order=false
+                  insertion-order report: 5.74 ms
+TreeMap            121.50          87.74            877.4             6.66       true       true   raw iteration: code-order=true insertion-order=false
+                  insertion-order report: 80.45 ms
+LinkedHashMap       39.27           4.83             48.3            60.50       true       true   raw iteration: code-order=false insertion-order=true
+                  insertion-order report: 4.64 ms
+Hashtable           20.73           5.61             56.1            18.33       true       true   raw iteration: code-order=false insertion-order=false
+                  insertion-order report: 5.95 ms
+sorted array       159.05          72.32            723.2             0.79   (sorted array: build = sort)
+Insert 1,000 new medicines into structure holding 100,000:  HashMap 0.142 ms | TreeMap 0.215 ms | sorted array 0.299 ms
+
+================ n = 500,000 medicines ================
+Structure       build(ms)   100k lookups      ns / lookup  code report(ms)   code ok?   ins. ok?
+HashMap            318.98           5.85             58.5           213.31       true       true   raw iteration: code-order=false insertion-order=false
+                  insertion-order report: 32.36 ms
+TreeMap           1077.52         154.16           1541.6            56.19       true       true   raw iteration: code-order=true insertion-order=false
+                  insertion-order report: 820.58 ms
+LinkedHashMap      506.96          10.51            105.1           422.16       true       true   raw iteration: code-order=false insertion-order=true
+                  insertion-order report: 80.07 ms
+Hashtable          345.59          11.41            114.1           193.21       true       true   raw iteration: code-order=false insertion-order=false
+                  insertion-order report: 59.14 ms
+sorted array       621.80         183.46           1834.6             6.39   (sorted array: build = sort)
+Insert 1,000 new medicines into structure holding 500,000:  HashMap 0.247 ms | TreeMap 0.196 ms | sorted array 0.517 ms
+
+Approximate retained memory for 100,000 medicines (heap used after building, incl. the same Medicine/String objects):
+  HashMap           11.67 MB  (122 bytes per entry, excluding key strings)
+  TreeMap           11.44 MB  (120 bytes per entry, excluding key strings)
+  LinkedHashMap     12.44 MB  (130 bytes per entry, excluding key strings)
+  Hashtable         11.43 MB  (120 bytes per entry, excluding key strings)
+
+Raw data written to q4_results.csv

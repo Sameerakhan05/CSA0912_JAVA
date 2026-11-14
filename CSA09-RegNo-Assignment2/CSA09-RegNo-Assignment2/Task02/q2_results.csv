@@ -1,0 +1,73 @@
+operation,size,structure,time_ms
+add at end (n adds),10000,ArrayList,0.1828
+add at end (n adds),10000,LinkedList,1.0619
+add at end (n adds),10000,ArrayDeque,0.3714
+insert at front,10000,ArrayList,1.5671
+insert at front,10000,LinkedList,0.9953
+insert at front,10000,ArrayDeque,0.0543
+insert in middle,10000,ArrayList,0.3837
+insert in middle,10000,LinkedList,30.0812
+remove from front,10000,ArrayList,1.3118
+remove from front,10000,LinkedList,0.0376
+remove from front,10000,ArrayDeque,0.0360
+remove from middle,10000,ArrayList,1.0893
+remove from middle,10000,LinkedList,12.7176
+get k-th (2000 gets),10000,ArrayList,0.2180
+get k-th (2000 gets),10000,LinkedList,7.3787
+iterate all,10000,ArrayList,0.3216
+iterate all,10000,LinkedList,0.2780
+iterate all,10000,ArrayDeque,0.3558
+insert at front,10000,plain array,9.1742
+insert in middle,10000,plain array,5.8569
+get k-th (2000 gets),10000,plain array,0.0344
+add at end (n adds),50000,ArrayList,2.7194
+add at end (n adds),50000,LinkedList,0.8871
+add at end (n adds),50000,ArrayDeque,1.2348
+insert at front,50000,ArrayList,7.8639
+insert at front,50000,LinkedList,0.0454
+insert at front,50000,ArrayDeque,0.8578
+insert in middle,50000,ArrayList,3.9248
+insert in middle,50000,LinkedList,69.9601
+remove from front,50000,ArrayList,7.0646
+remove from front,50000,LinkedList,0.8127
+remove from front,50000,ArrayDeque,0.0284
+remove from middle,50000,ArrayList,3.4926
+remove from middle,50000,LinkedList,66.3457
+get k-th (2000 gets),50000,ArrayList,0.1006
+get k-th (2000 gets),50000,LinkedList,34.4217
+iterate all,50000,ArrayList,0.9583
+iterate all,50000,LinkedList,0.3810
+iterate all,50000,ArrayDeque,0.2517
+insert at front,50000,plain array,40.6644
+insert in middle,50000,plain array,21.0672
+get k-th (2000 gets),50000,plain array,0.0518
+add at end (n adds),100000,ArrayList,2.1445
+add at end (n adds),100000,LinkedList,0.5979
+add at end (n adds),100000,ArrayDeque,0.2100
+insert at front,100000,ArrayList,15.4348
+insert at front,100000,LinkedList,0.0371
+insert at front,100000,ArrayDeque,0.1146
+insert in middle,100000,ArrayList,7.7071
+insert in middle,100000,LinkedList,146.4528
+remove from front,100000,ArrayList,15.2352
+remove from front,100000,LinkedList,0.0410
+remove from front,100000,ArrayDeque,0.0230
+remove from middle,100000,ArrayList,7.6547
+remove from middle,100000,LinkedList,132.9602
+get k-th (2000 gets),100000,ArrayList,0.0906
+get k-th (2000 gets),100000,LinkedList,77.9832
+iterate all,100000,ArrayList,0.1141
+iterate all,100000,LinkedList,0.6037
+iterate all,100000,ArrayDeque,0.1734
+insert at front,100000,plain array,72.8673
+insert in middle,100000,plain array,40.6314
+get k-th (2000 gets),100000,plain array,0.0351
+UpNext mixed ops,1000,ArrayList,50.1130
+UpNext mixed ops,1000,LinkedList,1.0890
+UpNext mixed ops,1000,ArrayDeque,0.2879
+UpNext mixed ops,10000,ArrayList,89.9029
+UpNext mixed ops,10000,LinkedList,0.4085
+UpNext mixed ops,10000,ArrayDeque,0.1838
+UpNext mixed ops,50000,ArrayList,291.6467
+UpNext mixed ops,50000,LinkedList,0.4586
+UpNext mixed ops,50000,ArrayDeque,0.3764

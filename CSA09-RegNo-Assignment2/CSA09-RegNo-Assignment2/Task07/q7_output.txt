@@ -1,0 +1,31 @@
+PharmacyRedesign.java:134: warning: [deprecation] getId() in Thread has been deprecated
+            long a0 = TMX.getThreadAllocatedBytes(Thread.currentThread().getId());
+                                                                        ^
+PharmacyRedesign.java:138: warning: [deprecation] getId() in Thread has been deprecated
+            mb += (TMX.getThreadAllocatedBytes(Thread.currentThread().getId()) - a0) / 1048576.0;
+                                                                     ^
+2 warnings
+Java 21.0.12.1
+
+=== A. DIAGNOSIS (Original, n=50,000, 100 cycles, k=20 new/cycle, 200 lookups/cycle) ===
+   one code-order report: sort = 19.83 ms, copy keys + 50,000 look-ups = 7.14 ms, (insertion-order report = 2.39 ms)
+   sorting share of the code report = 74%; string comparisons per report = 333,441 (n*log2(n) = 780,482)
+   Between two reports only k=20 keys changed (0.04% of the key set) - the other 49,980 are re-sorted needlessly.
+
+=== B. STRING COMPARISONS PER CODE REPORT (n=50,000 existing, k new since last report) ===
+       k           Original           Redesign      ratio
+      20            335,139             47,540       7.0x   same output: true
+     500            336,927             50,900       6.6x   same output: true
+    5000            364,568             59,990       6.1x   same output: true
+   50000            558,451            149,998       3.7x   same output: true
+
+=== C. WHOLE WORKLOAD (100 cycles): total time, average of 3 runs, plus MB allocated ===
+       n      k   lookups | Original ms (MB)         | TreeMap ms (MB)          | Redesign ms (MB)         |  speed-up
+   20000     20       200 |      377.6 (      29)   |      177.0 (       3)   |      147.7 (      12)   |      2.6x 
+   50000     20       200 |      972.7 (      67)   |      264.5 (       5)   |      134.1 (      27)   |      7.3x 
+  100000     20       200 |     1983.4 (     131)   |      828.1 (       9)   |      213.6 (      51)   |      9.3x 
+   50000     20    100000 |     1941.1 (      67)   |     5262.9 (       5)   |     1090.9 (      27)   |      1.8x 
+   50000    500       200 |     1551.0 (     133)   |      432.5 (      40)   |      304.1 (      71)   |      5.1x 
+   50000   5000       200 |     7464.9 (     756)   |      951.8 (     390)   |     1042.9 (     512)   |      7.2x 
+
+Raw data written to q7_results.csv

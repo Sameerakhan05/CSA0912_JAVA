@@ -1,0 +1,86 @@
+size,structure,metric,value
+10000,HashMap,build_ms,5.8980
+10000,HashMap,lookups_100k_ms,4.0133
+10000,HashMap,ns_per_lookup,40.13
+10000,HashMap,code_report_ms,7.8295
+10000,HashMap,insertion_report_ms,1.9341
+10000,TreeMap,build_ms,8.4401
+10000,TreeMap,lookups_100k_ms,22.7082
+10000,TreeMap,ns_per_lookup,227.08
+10000,TreeMap,code_report_ms,1.4548
+10000,TreeMap,insertion_report_ms,4.0669
+10000,LinkedHashMap,build_ms,1.8667
+10000,LinkedHashMap,lookups_100k_ms,3.4401
+10000,LinkedHashMap,ns_per_lookup,34.40
+10000,LinkedHashMap,code_report_ms,6.0063
+10000,LinkedHashMap,insertion_report_ms,0.3965
+10000,Hashtable,build_ms,2.5634
+10000,Hashtable,lookups_100k_ms,4.5688
+10000,Hashtable,ns_per_lookup,45.69
+10000,Hashtable,code_report_ms,3.9036
+10000,Hashtable,insertion_report_ms,1.3553
+10000,sorted array,build_ms,10.2543
+10000,sorted array,lookups_100k_ms,19.6823
+10000,sorted array,ns_per_lookup,196.82
+10000,sorted array,code_report_ms,0.2986
+10000,HashMap,insert_1000_ms,0.0660
+10000,TreeMap,insert_1000_ms,0.1624
+10000,sorted array,insert_1000_ms,0.2844
+100000,HashMap,build_ms,33.5751
+100000,HashMap,lookups_100k_ms,10.8995
+100000,HashMap,ns_per_lookup,109.00
+100000,HashMap,code_report_ms,54.5430
+100000,HashMap,insertion_report_ms,5.7425
+100000,TreeMap,build_ms,121.5028
+100000,TreeMap,lookups_100k_ms,87.7409
+100000,TreeMap,ns_per_lookup,877.41
+100000,TreeMap,code_report_ms,6.6562
+100000,TreeMap,insertion_report_ms,80.4515
+100000,LinkedHashMap,build_ms,39.2721
+100000,LinkedHashMap,lookups_100k_ms,4.8344
+100000,LinkedHashMap,ns_per_lookup,48.34
+100000,LinkedHashMap,code_report_ms,60.5003
+100000,LinkedHashMap,insertion_report_ms,4.6359
+100000,Hashtable,build_ms,20.7322
+100000,Hashtable,lookups_100k_ms,5.6097
+100000,Hashtable,ns_per_lookup,56.10
+100000,Hashtable,code_report_ms,18.3267
+100000,Hashtable,insertion_report_ms,5.9503
+100000,sorted array,build_ms,159.0482
+100000,sorted array,lookups_100k_ms,72.3235
+100000,sorted array,ns_per_lookup,723.23
+100000,sorted array,code_report_ms,0.7859
+100000,HashMap,insert_1000_ms,0.1417
+100000,TreeMap,insert_1000_ms,0.2149
+100000,sorted array,insert_1000_ms,0.2990
+500000,HashMap,build_ms,318.9811
+500000,HashMap,lookups_100k_ms,5.8476
+500000,HashMap,ns_per_lookup,58.48
+500000,HashMap,code_report_ms,213.3145
+500000,HashMap,insertion_report_ms,32.3556
+500000,TreeMap,build_ms,1077.5245
+500000,TreeMap,lookups_100k_ms,154.1552
+500000,TreeMap,ns_per_lookup,1541.55
+500000,TreeMap,code_report_ms,56.1927
+500000,TreeMap,insertion_report_ms,820.5784
+500000,LinkedHashMap,build_ms,506.9629
+500000,LinkedHashMap,lookups_100k_ms,10.5056
+500000,LinkedHashMap,ns_per_lookup,105.06
+500000,LinkedHashMap,code_report_ms,422.1581
+500000,LinkedHashMap,insertion_report_ms,80.0660
+500000,Hashtable,build_ms,345.5942
+500000,Hashtable,lookups_100k_ms,11.4056
+500000,Hashtable,ns_per_lookup,114.06
+500000,Hashtable,code_report_ms,193.2109
+500000,Hashtable,insertion_report_ms,59.1386
+500000,sorted array,build_ms,621.7974
+500000,sorted array,lookups_100k_ms,183.4563
+500000,sorted array,ns_per_lookup,1834.56
+500000,sorted array,code_report_ms,6.3911
+500000,HashMap,insert_1000_ms,0.2469
+500000,TreeMap,insert_1000_ms,0.1963
+500000,sorted array,insert_1000_ms,0.5173
+100000,HashMap,memory_MB,11.666
+100000,TreeMap,memory_MB,11.444
+100000,LinkedHashMap,memory_MB,12.444
+100000,Hashtable,memory_MB,11.431

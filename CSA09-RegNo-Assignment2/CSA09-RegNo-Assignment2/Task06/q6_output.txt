@@ -1,0 +1,30 @@
+Java 21.0.12.1
+
+ARRIVALS (arrival no. : name severity): 
+  0:Ravi S3  1:Meena S1  2:John S3  3:Asha S5  4:Kumar S1  5:Lata S2  6:Divya S2  7:Tom S4
+
+HAND-WORKED EXPECTED ORDER : Meena(S1) Kumar(S1) Lata(S2) Divya(S2) Ravi(S3) John(S3) Tom(S4) Asha(S5)
+printing the PriorityQueue directly : [Patient[name=Meena, severity=1, arrival=1], Patient[name=Kumar, severity=1, arrival=4], Patient[name=Lata, severity=2, arrival=5], Patient[name=Tom, severity=4, arrival=7], Patient[name=Ravi, severity=3, arrival=0], Patient[name=John, severity=3, arrival=2], Patient[name=Divya, severity=2, arrival=6], Patient[name=Asha, severity=5, arrival=3]]   <-- heap array order, NOT treatment order
+order produced by poll() repeatedly : Meena(S1) Kumar(S1) Lata(S2) Divya(S2) Ravi(S3) John(S3) Tom(S4) Asha(S5)
+(a plain FIFO queue would give   : Ravi(S3) Meena(S1) John(S3) Asha(S5) Kumar(S1) Lata(S2) Divya(S2) Tom(S4))
+
+GROWTH - PriorityQueue (binary heap): prediction add = O(log n), poll = O(log n)  (average of 5 runs)
+         n   add all (ms)  poll all (ms)         ns / add        ns / poll
+     10000           2.32           5.23            232.0            522.5
+    100000           4.75          20.22             47.5            202.2
+   1000000          24.33         463.98             24.3            464.0
+
+ALTERNATIVES at equal sizes (total time to admit n patients then serve all, average of 3 runs):
+       n   PriorityQueue (ms)   sorted LinkedList (ms)     5 FIFO queues (ms)
+    5000                 0.71                    41.57                   0.29
+   20000                 3.70                  1086.54                   0.27
+   50000                12.21                 18566.48                   0.98
+
+STARVATION SIMULATION: one severity-5 patient arrives at tick 0; every tick 6 new severity-1/2 patients arrive per 5 ticks (1.2 per tick) while the doctor serves 1 per tick (overloaded ED).
+  strict priority : severity-5 patient NEVER served in 20000 ticks; longest wait of any severity-1 patient = 2 ticks; queue length at end = 4001
+  aging (W=50)    : severity-5 patient served at tick 214; longest wait of any severity-1 patient = 3307 ticks; queue length at end = 4001
+
+DEPLOYMENT CHECK: 5,000 patients/day = 0.06 arrivals per second.
+  admitting and serving all 5,000 patients took 9.870 ms in total
+
+Raw data written to q6_results.csv

@@ -1,0 +1,35 @@
+Java 21.0.12.1
+
+TEST 1: HashSet<BadStudent>, 3 DIFFERENT students, then the SAME object re-added (re-scan of the same card object)
+   Reason for prediction: same object => same identity hashCode => same bucket => equals() true => 3 stays 3.
+   PREDICTED size = 3 | OBSERVED size = 3 | prediction CORRECT
+
+TEST 2: HashSet<BadStudent>, 1000 scans of the SAME student (a new object per scan)
+   Reason for prediction: equals() says all equal, but Object.hashCode() differs per object, so HashSet
+   looks in different buckets and never even calls equals(). Expected ~1000 entries instead of 1.
+   PREDICTED size = 1000 | OBSERVED size = 1000 | prediction CORRECT
+
+   contains(new BadStudent("192311001")) = false   (equals says yes, but HashSet looks in the wrong bucket)
+   Same test with the corrected class: size = 1, contains = true
+
+TEST 3 (own): MutableStudent with a correct hashCode; regNo is changed AFTER insertion
+   Reason for prediction: size stays 1, but the entry now sits in the bucket of the OLD hash, so
+   contains(new regNo) = false (searches new bucket) and contains(old regNo) = false (equals fails).
+   size = 1
+   contains(regNo=192311999 (new value)) = false
+   contains(regNo=192311001 (old value)) = false
+   contains(m itself)                    = false
+   remove(m)                             = false   (m is stranded in the old bucket - it cannot be removed)
+   PREDICTED size = 1 | OBSERVED size = 1 | prediction CORRECT
+
+   Re-scanning the student under the new regNo: size = 2 -> the same student now exists twice (a 'ghost' entry plus the new one)
+
+TEST 4 (own): TreeSet whose comparator compares only the first 5 characters of regNo (inconsistent with equals)
+   Prediction: 192311001 and 192311002 compare as 0 => TreeSet keeps only one, although equals() says they differ => size 1.
+   PREDICTED size = 1 | OBSERVED size = 1 | prediction CORRECT
+
+ALTERNATIVES - de-duplicating n scans (each of n/3 unique ids scanned 3 times), average of 5 runs:
+     scans       HashSet (ms)       TreeSet (ms)       HashMap (ms)
+     30000               1.48              23.79               0.99
+    300000              27.63             101.40              42.77
+   1200000             159.47             670.33             203.60

@@ -1,0 +1,20 @@
+n,design,metric,value
+10000,PriorityQueue,add_ns,232.00
+10000,PriorityQueue,poll_ns,522.55
+100000,PriorityQueue,add_ns,47.49
+100000,PriorityQueue,poll_ns,202.15
+1000000,PriorityQueue,add_ns,24.33
+1000000,PriorityQueue,poll_ns,463.98
+5000,PriorityQueue,total_ms,0.706
+5000,sorted LinkedList,total_ms,41.571
+5000,5 FIFO queues,total_ms,0.287
+20000,PriorityQueue,total_ms,3.702
+20000,sorted LinkedList,total_ms,1086.543
+20000,5 FIFO queues,total_ms,0.268
+50000,PriorityQueue,total_ms,12.214
+50000,sorted LinkedList,total_ms,18566.475
+50000,5 FIFO queues,total_ms,0.975
+20000,strict priority,sev5_served_tick,-1
+20000,strict priority,max_wait_sev1_ticks,2
+20000,aging (W=50),sev5_served_tick,214
+20000,aging (W=50),max_wait_sev1_ticks,3307

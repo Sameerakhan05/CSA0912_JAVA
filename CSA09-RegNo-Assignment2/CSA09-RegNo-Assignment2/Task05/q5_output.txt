@@ -1,0 +1,37 @@
+Java 21.0.12.1
+
+TEST SET 1 (ties at every level) - correct comparator chain:
+   Team[name=Eagles, points=9, goalDiff=6]
+   Team[name=Zebras, points=9, goalDiff=6]
+   Team[name=Bisons, points=9, goalDiff=4]
+   Team[name=Panthers, points=9, goalDiff=4]
+   Team[name=Aces, points=6, goalDiff=3]
+   Team[name=Archers, points=6, goalDiff=1]
+   Team[name=Cobras, points=6, goalDiff=1]
+   Team[name=Falcons, points=6, goalDiff=1]
+   Team[name=Bulls, points=3, goalDiff=0]
+   Team[name=Comets, points=3, goalDiff=-2]
+   Team[name=Dragons, points=3, goalDiff=-2]
+   Team[name=Wolves, points=0, goalDiff=-9]
+   top 3 = [Team[name=Eagles, points=9, goalDiff=6], Team[name=Zebras, points=9, goalDiff=6], Team[name=Bisons, points=9, goalDiff=4]]
+   contract check: antisymmetry violations=0, transitivity violations=0  => CONSISTENT
+   same result when input is reversed (stability / determinism): true
+
+TEST SET 2 (designed to break faulty comparators):
+   FAULTY_SUBTRACT   : antisymmetry violations=0, transitivity violations=12  => BROKEN
+      compare(Huge, Penalised) = 147483649  (Huge has MORE points so it should rank first => negative expected; overflow gives positive)
+   FAULTY_NO_TIEBREAK: antisymmetry violations=0, transitivity violations=0  => CONSISTENT  (still transitive, but TieA/TieB/TieC compare as equal => their order depends on input order)
+      forward input  -> Huge TieA TieB TieC Normal Penalised
+      reversed input -> Huge TieC TieB TieA Normal Penalised   (different! ranking is not deterministic)
+   BY_RANK (correct) : antisymmetry violations=0, transitivity violations=0  => CONSISTENT
+      forward input  -> Huge TieA TieB TieC Normal Penalised
+      reversed input -> Huge TieA TieB TieC Normal Penalised   (identical)
+   sort with FAULTY_SUBTRACT on 2000 teams: no exception, but result is wrong (e.g. first = Team[name=T70, points=-1999999991, goalDiff=0])
+
+Comparable<RankedTeam> + rankNatural(...) gives same order as comparator chain: true
+
+ALTERNATIVE: one Comparator-chain sort  vs  three stable sorts (name, then goalDiff, then points)
+         n  chain comparisons 3-sort comparisons       chain ms      3-sort ms      same?
+     10000             120422             290250           17.9           21.7       true
+    100000            1534761            3242213           64.9           90.5       true
+   1000000           18640516           35701382         1627.7         2120.2       true
